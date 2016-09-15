@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+    
+    <entry>
+      <title><![CDATA[Git 常用命令]]></title>
+      <url>https://jerryli1997.github.io/2016/09/14/Git-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+      <content type="html"><![CDATA[<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h3 id="安装-Git"><a href="#安装-Git" class="headerlink" title="安装 Git"></a>安装 Git</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.name &quot;Your Name&quot;</div><div class="line">$ git config --global user.email &quot;email@example.com&quot;</div></pre></td></tr></table></figure>
+<h3 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h3><p><code>git init</code> 命令把当前目录变成 Git 可以管理的仓库。</p>
+<p>不要使用 Windows 自带的记事本编辑任何文本文件。</p>
+<p><code>git add</code> 命令将文件添加到暂存区。</p>
+<p><code>git commit</code> 命令将改动提交到当前分支。<code>-m &quot;*&quot;</code> 参数增加提交说明。</p>
+<h3 id="版本管理"><a href="#版本管理" class="headerlink" title="版本管理"></a>版本管理</h3><p><code>git status</code> 查看仓库当前状态。</p>
+<p><code>git diff</code> 查看 difference。</p>
+<p><code>git log</code> 显示从最近到最远的提交日志。<code>--pretty=oneline</code> 参数减少输出信息。</p>
+<p><code>git reset --hard HEAD^</code> 回退到上一个版本。</p>
+<p><code>git reset --hard *</code> 回退到某个版本，* 为版本号。</p>
+<p><code>git reflog</code> 查看每一次命令。</p>
+<p><code>git checkout -- file</code> 丢弃工作区对某文件的修改。用版本库里的版本替换工作区的版本。</p>
+<p><code>git reset HEAD file</code> 撤销暂存区的修改。</p>
+<p><code>git rm file</code> 从版本库中删除文件。</p>
+<h3 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h3><p><code>ssh-keygen -t rsa -C &quot;youremali@example.com&quot;</code> 创建 SSH Key。</p>
+<p><code>git push -u origin master</code> 把本地库的内容推送到远程，<code>-u</code> 参数会把本地的<code>master</code> 分支和远程<code>master</code> 分支关联起来，以后推送或者拉取可以简化命令。</p>
+<h3 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h3><p><code>git checkout -b dev</code> 创建<code>dev</code> 分支并切换，<code>-b</code> 相当于<code>git branch dev</code> 和<code>git checkout dev</code> 。</p>
+<p><code>git branch</code> 查看分支。</p>
+<p><code>git merge dev</code> 合并<code>dev</code> 分支到当前分支。</p>
+<p><code>git branch -d dev</code> 删除<code>dev</code> 分支。</p>
+<p><code>git log --graph</code> 可以看到分支合并图。</p>
+<p><code>git merge --no-ff dev</code> 禁用<code>Fast forward</code> 模式，合并后的历史有分支。</p>
+<p><code>git stash</code> 保存工作区。</p>
+<p><code>git stash list</code> 查看<code>stash</code> 内容。</p>
+<p><code>git stash apply</code> 恢复最近的<code>stash</code> 。</p>
+<p><code>git stash drop</code> 删除最近的<code>stach</code> 。</p>
+<p><code>git stash pop</code> 恢复最近的<code>stash</code> 同时对其进行删除。</p>
+<p><code>git stash apply stash@{0}</code> 恢复指定的<code>stash</code> 。</p>
+<p><code>git branch -d feature-vulcan</code> 强制删除<code>feature-vulcan</code> 分支。</p>
+<p><code>git remote</code> 查看远程库信息。</p>
+<p><code>git remote -v</code> 显示更详细信息。</p>
+<p><code>git push origin master/dev</code> 将<code>master</code> 或<code>dev</code> 分支推送到远程分支上。</p>
+<h3 id="标签管理"><a href="#标签管理" class="headerlink" title="标签管理"></a>标签管理</h3><p><code>git tag &lt;name&gt;</code> 添加标签。</p>
+<p><code>git tag &lt;name&gt; &lt;commit id&gt;</code> 对历史提交添加标签。</p>
+<p><code>git tag</code> 查看标签。</p>
+<p><code>git show &lt;tagname&gt;</code> 查看标签信息。</p>
+<p><code>git tag -d v0.1</code> 删除本地标签。</p>
+<p><code>git push origin &lt;tagname&gt;</code> 推送本地标签到远程。</p>
+<p><code>git push origin --tags</code> 推送全部未推送到远程的本地标签。</p>
+<p><code>git git push origin :refs/tags/&lt;name&gt;</code> 删除远程标签。</p>
+<h3 id="自定义-Git"><a href="#自定义-Git" class="headerlink" title="自定义 Git"></a>自定义 Git</h3><p><code>git config --global alias.&lt;abrr&gt; command</code> 缩写，<code>--global</code> 参数是全局参数。 </p>
+]]></content>
+    </entry>
+    
+  
+  
+</search>
